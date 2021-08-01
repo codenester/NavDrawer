@@ -1,0 +1,128 @@
+:root {
+  --text-color: #444;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+}
+#container,
+#modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+}
+#container {
+  flex-direction: column;
+}
+#top-bar,
+#content,
+#bottom-bar {
+  flex: 1;
+}
+#top-bar {
+  padding: 0 10px;
+  max-height: 60px;
+  background-color: rgb(164, 243, 190);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#bottom-bar {
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+  justify-content: flex-end;
+}
+#drawer {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+.at-left {
+  margin-left: -100%;
+}
+#title {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+#menu {
+  position: relative;
+  height: 46px;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+
+.bar {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-color);
+}
+#content {
+  display: grid;
+  place-items: center;
+}
+a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(21, 115, 128);
+  text-decoration: none;
+}
+#modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: flex-start;
+}
+#draw-header {
+  max-height: 60px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 20px;
+  border-bottom: solid 1px #ddd;
+}
+#drawer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  transition: 0.1s;
+  cursor: pointer;
+  font-size: 14px;
+}
+.nav-item:hover {
+  background-color: rgb(135, 162, 194);
+  color: #fff;
+}
+.page {
+  display: grid;
+  place-items: center;
+}
+.none {
+  display: none;
+}
