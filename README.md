@@ -1,5 +1,5 @@
-<h1 style="text-align:center;">NavDrawer</h1>
-<p style="text-align:center;">This is an example of using only html css and javascript to create a navigation drawer without any framework or library.</p>
+<h1 style="display:flex;justify-content:center;">NavDrawer</h1>
+<p style="display:flex;justify-content:center;">This is an example of using only html css and javascript to create a navigation drawer without any framework or library.</p>
 
 # How to get source code
 
