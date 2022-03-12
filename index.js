@@ -11,7 +11,7 @@ function domEl() {
   return { pages, navItems, menu, drawer, closeIcon, openIcon };
 }
 // page navigation event
-function initEvent() {
+function setEvent() {
   const { navItems, pages, menu, drawer, closeIcon, openIcon } = domEl();
   return {
     nav: () => ({
@@ -33,7 +33,10 @@ function initEvent() {
               if (i != j) {
                 Object.values(v).forEach(el => el.classList.remove("active"));
                 pages[j].classList.add("none");
-              } else pages[j].classList.remove("none");
+              } else {
+                pages[j].classList.remove("none");
+                document.getElementsByTagName('title')[0].innerText = pages[j].innerHTML.split(' ')[0];
+              };
             });
           });
         }
@@ -52,25 +55,13 @@ function initEvent() {
     })
   }
 }
-const { nav, menu } = initEvent();
-const { hover, blur, click } = nav();
-hover();
-blur();
-click();
-menu();
 
-function onScreenClick() {
-  document.onclick = (e) => {
-    if (e.target.id != "menu" && e.target.className != "bar") {
-      domEl().drawer.classList.add("at-left");
-      setTimeout(() => {
-        domEl().modal.style.display = "none";
-      }, 100);
-    }
-  };
+function init() {
+  const { nav, menu } = setEvent();
+  const n = nav();
+  menu();
+  for (let e in n) n[e]();
 }
 
 //initialize
-// onMenuClick();
-// onScreenClick();
-// setNavigation();
+init();
