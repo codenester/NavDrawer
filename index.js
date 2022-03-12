@@ -45,12 +45,12 @@ function setEvent() {
     menu: () => menu.addEventListener("click", () => {
       if (drawer.classList.contains("close-drawer")) {
         drawer.classList.remove("close-drawer");
-        closeIcon.classList.remove('hide');
-        openIcon.classList.add('hide');
+        closeIcon.classList.remove('none');
+        openIcon.classList.add('none');
       } else {
         drawer.classList.add("close-drawer");
-        closeIcon.classList.add('hide');
-        openIcon.classList.remove('hide');
+        closeIcon.classList.add('none');
+        openIcon.classList.remove('none');
       }
     })
   }
